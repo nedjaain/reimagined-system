@@ -1,4 +1,6 @@
-import 'package:client_app/Ui/OnBoardingScreen.dart';
+import 'package:client_app/View/OnBoardingScreen.dart';
+import 'package:client_app/View/RestaurantScreen.dart';
+import 'package:client_app/View/RestaurantsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

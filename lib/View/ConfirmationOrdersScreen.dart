@@ -49,35 +49,31 @@ class ConfirmationOrdersScreen extends StatelessWidget {
                   Spacer(flex: 1,) ,
                   AutoSizeText('Vos informations' ,
                     textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 28.sp,
-                      fontFamily: 'Golos',
-                    ),
+                    style: theme().textTheme.headline1
                   ) ,                          // Vos informations
                   Spacer(flex : 1 ) ,
                   AutoSizeText("Veuillez vérifier vos commandes, une fois que vous aurez confirmé votre achat, vous n’aurez pas le droit d’annuler." ,
                     textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff807F7F),
-                      fontSize: 17.sp,
-                      fontFamily: 'Golos',
-                    ),) ,                         //Text
+                    style: theme().textTheme.headline5
+
+                  ) ,                         //Text
                   Spacer(flex:1) ,
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9.r) ,
                       color: Color(0xffE4E4E4) ,
                     ),
-                    height: 56.h,
+                    //height: 56.h,
                     width: 401.w,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Spacer(flex: 1,) ,
-                        Image.asset('lib/Asset/Images/Location.png') ,
+                        Image.asset(
+                            'lib/Asset/Images/Location.png' ,
+                             height : 27.h ,
+                             width: 25.w,) ,
                         Spacer(flex: 1,) ,
                         Expanded(
                           flex: 29,
@@ -87,32 +83,21 @@ class ConfirmationOrdersScreen extends StatelessWidget {
                             children: [
                               AutoSizeText("Votre adresss" ,
                                 textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15.sp,
-                                  fontFamily: 'Golos',
-                                ),) ,
+                                style: theme().textTheme.bodyText1?.copyWith(color: Colors.black),) ,
                               AutoSizeText( adresse,
                                 textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: Color(0xff9D9D9D),
-                                  fontSize: 15.sp,
-                                  fontFamily: 'Golos',
-                                ),) ,
+                                style: theme().textTheme.bodyText1,) ,
 
                             ],
                           ),
                         ) ,
-                        TextButton(onPressed: (){},
+                        TextButton(
+                           onPressed: () {  },
                             child: AutoSizeText(
                               'Modifier' ,
                               textAlign: TextAlign.start,
-                              style: TextStyle(
-                                color: Color(0xffE6424B),
-                                fontSize: 15.sp,
-                                fontFamily: 'Golos',
-                              ),
-                            )
+                              style: theme().textTheme.bodyText1?.copyWith(color: Color(0xffE6424B)) ,
+                            ),
                         )
                       ],
                     )
@@ -127,16 +112,9 @@ class ConfirmationOrdersScreen extends StatelessWidget {
                       cursorColor: Colors.black,
                       decoration: InputDecoration(
                         hintText: 'Écrire un message ( optionnelle )'  ,
-                       hintStyle: TextStyle(
-                         color: Color(0xff9F9999) ,
-                         fontSize: 18.sp,
-                         fontFamily: 'Golos',
-                       ),
-                        labelStyle:  TextStyle(
-                          color: Colors.black ,
-                          fontSize: 18.sp,
-                          fontFamily: 'Golos',
-                        ),
+                       hintStyle: theme().textTheme.headline4?.copyWith(color :Color(0xff9F9999) , fontWeight: FontWeight.normal ) ,
+                        labelStyle:  theme().textTheme.headline4?.copyWith(color :Colors.black , fontWeight: FontWeight.normal ) ,
+
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(9.r)  ,
                             borderSide: BorderSide.none) ,
@@ -153,14 +131,15 @@ class ConfirmationOrdersScreen extends StatelessWidget {
                     width: 401.w,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(9.r)),
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(primary: theme().primaryColor ),
+                        style: ElevatedButton.styleFrom(
+                            primary: theme().primaryColor ,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(9.0),
+                                side: BorderSide(color: Colors.red))),
                         onPressed: () {
                           },
                         child: AutoSizeText('Confirmer' ,
-                          style: TextStyle(
-                              fontFamily: 'Golos',
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.bold),
+                          style: theme().textTheme.headline2
                         )),
                   ) ,
                   Spacer(flex: 6,)
